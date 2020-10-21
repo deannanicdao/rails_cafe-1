@@ -1,0 +1,5 @@
+<h1><%= @item.item %></h1>
+<h3>$<%= "%.2f" % @item.price %></h3>
+<p>Quantity: <%= @item.quantity.to_i %></p>
+<hr>
+<p><%= link_to "Delete!", menu_item_path(@item), method: :delete, data: { confirm: "Are you sure?" } %></p>
