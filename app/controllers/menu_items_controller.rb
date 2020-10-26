@@ -1,10 +1,11 @@
 class MenuItemsController < ApplicationController
+  before_action :set_item, only: [:show, :update, :edit, :destroy]
+
   def index
     @items = MenuItem.order(:item)
   end
 
   def show
-    @item = MenuItem.find(params[:id])
   end
 
   def create
@@ -13,27 +14,30 @@ class MenuItemsController < ApplicationController
   end
 
   def new
+    @item = MenuItem.new
   end
 
   def update
-    item = MenuItem.find(params[:id])
-    item.update(menu_item_params)
-    redirect_to menu_item_path(item)
+    @item.update(menu_item_params)
+    redirect_to menu_item_path(@item)
   end
 
   def edit
-    @item = MenuItem.find(params[:id])
   end
 
   def destroy
-    item = MenuItem.find(params[:id])
-    item.destroy
+    @item.destroy
     redirect_to menu_items_path
   end
 
   private
 
+  def set_item
+    @menus = Menu.all
+    @item = MenuItem.find(params[:id])
+  end
+
   def menu_item_params
-    params.permit(:item, :price, :quantity)
+    params.require(:menu_item).permit(:item, :price, :quantity, menu_ids: [])
   end
 end

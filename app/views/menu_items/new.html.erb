@@ -1,20 +1,3 @@
 <h1>Create a new menu item</h1>
 
-<form action="<%= menu_items_path %>" method="post">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-    <div>
-        <label for="item">Item</label>
-        <input type="text" id="item" name="item">
-    </div>
-    <div>
-        <label for="price">Price</label>
-        <input type="number" step="0.01" id="price" name="price">
-    </div>
-    <div>
-        <label for="qty">Quantity</label>
-        <input type="number" id="qty" name="quantity">
-    </div>
-    <div>
-        <button>Create Menu Item</button>
-    </div>
-</form>
+<%= render 'form' %>
