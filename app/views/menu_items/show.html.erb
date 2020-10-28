@@ -1,4 +1,5 @@
 <h1><%= @item.item %></h1>
+<p><%= cl_image_tag(@item.image.key, crop: :scale, width: 100, cloud_name: 'flynnwebdev') %></p>
 <h3>$<%= "%.2f" % @item.price %></h3>
 <p>Quantity: <%= @item.quantity.to_i %></p>
 <hr>
