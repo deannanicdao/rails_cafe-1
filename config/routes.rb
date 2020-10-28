@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :menu_items
   # get "menu_items", to: "menu_items#index"
   # get "menu_items/new", to: "menu_items#new"
