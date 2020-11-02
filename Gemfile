@@ -62,3 +62,5 @@ gem "rolify", "~> 5.3"
 gem "cloudinary", "~> 1.18"
 gem "activestorage-cloudinary-service", "~> 0.2.3"
 
+
+gem "stripe", "~> 5.28"

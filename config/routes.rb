@@ -13,5 +13,9 @@ Rails.application.routes.draw do
 
   get "/order/:id", to: "cafe#order", as: "order"
 
+  post "/menu_items/:id/buy", to: "menu_items#buy", as: "buy"
+  get "/menu_items/:id/success", to: "menu_items#success", as: "success"
+  get "/menu_items/:id/cancel", to: "menu_items#cancel", as: "cancel"
+
   root to: "cafe#index"
 end
