@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   get "/menu_items/:id/success", to: "menu_items#success", as: "success"
   get "/menu_items/:id/cancel", to: "menu_items#cancel", as: "cancel"
 
-  root to: "cafe#index"
+  root to: "menu_items#index"
 end
